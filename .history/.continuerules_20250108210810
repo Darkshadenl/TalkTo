@@ -1,0 +1,45 @@
+# ContinueRules
+
+## Requirements
+
+### Project finishline
+
+- [ ] Monica bot can succesfully read obsidian vault files
+- [ ] Monica bot can succesfully create obsidian vault files
+- [ ] Monica bot can succesfully overwrite obsidian vault files
+- [ ] Monica bot can succesfully delete obsidian vault files
+- [ ] Monica bot can see we haven't created a standup note for today and will create it + copy relevant notes from last time. 
+
+### Python code
+
+- Gebruik type hints.
+- Zorg dat ik niet vergeet om pyproject.toml en poetry te gebruiken.
+- Eveneens pydantic met BaseSettings voor het inlezen van .env
+- SOLID principes
+- Dependecy injection 
+- Laten we alles doen om circular dependency problemen te voorkomen.
+
+#### Required Structuur (is mogelijk nog niet zo)
+
+TalkToObsidian/
+│
+├── src/                    # Hoofdmap voor broncode 
+│   ├── __init__.py
+│   ├── main.py            # Startpunt
+│   ├── core/              # Core functionaliteit
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   └── services.py
+│   │
+│   ├── utils/             # Hulpprogramma's
+│   │   ├── __init__.py
+│   │   └── helpers.py
+│   │
+│   └── api/               # API-gerelateerde code
+│       ├── __init__.py
+│       └── endpoints.py
+│
+├── tests/                 # Testmap
+│   └── __init__.py
+│
+└── setup.py              # Project configuratie

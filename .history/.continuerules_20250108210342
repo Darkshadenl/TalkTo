@@ -1,0 +1,9 @@
+# ContinueRules
+
+## Requirements
+
+### Python code
+
+- Gebruik type hints.
+- Zorg dat ik niet vergeet om pyproject.toml en poetry te gebruiken.
+- Eveneens pydantic met BaseSettings voor het inlezen van .env
