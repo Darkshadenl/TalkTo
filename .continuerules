@@ -4,7 +4,7 @@
 
 ### Project finishline
 
-- [ ] Monica bot can succesfully read obsidian vault files
+- [X] Monica bot can succesfully read obsidian vault files
 - [ ] Monica bot can succesfully create obsidian vault files
 - [ ] Monica bot can succesfully overwrite obsidian vault files
 - [ ] Monica bot can succesfully delete obsidian vault files

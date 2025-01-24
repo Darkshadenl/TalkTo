@@ -1,0 +1,67 @@
+# This is an example ".prompt.yml" file
+# It is used to define and reuse prompts within Monica
+# Monica will automatically create a slash command for each prompt in the .prompts folder
+# You can also use these prompts in your code
+#
+# Note: Files in ~/.monica-code/prompts will also be read by Monica
+# Handlebars syntax like {{{ contextProviderTitle args }}} will be parsed
+# Unrecognized patterns like {{{ ./path/to/file.js }}} will attempt to read the specified file
+temperature: 0.0
+prompt: |
+  Analyze the code changes above with a focus on performance optimization while maintaining code readability. 
+  For each file, provide structured feedback in the following format:
+
+  For each file, create a section with:
+  - If the code is well-optimized and readable: an h3 header "✅ <filename>"
+  - If improvements are needed: an h3 header "❌ <filename>"
+
+  For files needing improvements, include:
+  1. Performance Impact (High/Medium/Low)
+  2. Detailed explanation of the issue
+  3. Code snippet showing the optimized solution
+  4. Expected performance benefit
+
+  Example output (surrounded by backticks, your response should not use them):
+
+  ✅ service.ts
+   Clean and optimized code, good balance between performance and readability.
+
+   ❌ data-processor.ts
+   Performance Impact: High
+
+   The current implementation creates unnecessary memory allocations:
+
+   // Current implementation
+   items.forEach(item => {
+   const processed = heavyOperation(item);
+   results.push(processed);
+   });
+
+   // Optimized solution
+   const results = items.map(heavyOperation);
+   Expected benefit: 30% reduction in memory usage and improved execution time.
+
+   Focus on the following optimization aspects:
+   1. Performance Bottlenecks:
+      - Inefficient data structures or algorithms
+      - Unnecessary iterations or memory allocations
+      - Resource-intensive operations that could be optimized
+
+   2. Code Quality:
+      - Proper use of caching and memoization
+      - Efficient use of async/await patterns
+      - Memory management and garbage collection impact
+
+   3. Maintainability:
+      - Clear separation of concerns
+      - Code duplication that affects performance
+      - Proper error handling without performance overhead
+
+   4. Best Practices:
+      - Use of appropriate design patterns for performance
+      - Efficient database queries and data access patterns
+      - Proper resource disposal and cleanup
+
+   Review ALL changed files thoroughly. For each suggestion, consider both the performance benefit and the impact on code readability.
+   Provide concrete examples and measurable benefits where possible.
+
